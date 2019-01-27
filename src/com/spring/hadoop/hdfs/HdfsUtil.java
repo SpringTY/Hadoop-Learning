@@ -19,11 +19,12 @@ import org.apache.hadoop.fs.LocatedFileStatus;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.fs.RemoteIterator;
 import org.junit.Test;
-
+//
 public class HdfsUtil {
 	public static void main(String[] args) throws IOException {
-		Configuration conf = new Configuration();//读配置文件
+		Configuration conf = new Configuration();//读配置文件s
 		FileSystem fs = FileSystem.get(conf);
+		System.out.println();
 		Path src = new Path("hdfs://spring:9000/jdk-7u80-linux-x64.tar.gz");
 		FSDataInputStream open = fs.open(src);
 		FileOutputStream fileOutputStream = new FileOutputStream("/Users/spring/Downloads/l/jdk-7u80-linux-x64.tar.gz");
