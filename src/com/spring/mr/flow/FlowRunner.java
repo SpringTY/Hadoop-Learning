@@ -34,10 +34,10 @@ public class FlowRunner extends Configured implements Tool{
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(FlowBean.class);
 		
-		FileInputFormat.setInputPaths(job, new Path(args[0]));
-		FileOutputFormat.setOutputPath(job, new Path(args[1]));
-//		FileInputFormat.setInputPaths(job, new Path("/Users/spring/hadoopSpace/flow/data/"));
-//		FileOutputFormat.setOutputPath(job, new Path("/Users/spring/hadoopSpace/flow/output/"));
+//		FileInputFormat.setInputPaths(job, new Path(args[0]));
+//		FileOutputFormat.setOutputPath(job, new Path(args[1]));
+		FileInputFormat.setInputPaths(job, new Path("hdfs://spring:9000/flow/data/"));
+		FileOutputFormat.setOutputPath(job, new Path("hdfs://spring:9000/flow/output2222/"));
 		return job.waitForCompletion(true)?0:1;
 	}
 
